@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace DesktopGemStones
 {
@@ -201,42 +202,84 @@ namespace DesktopGemStones
             this.Close();
         }
 
+        static bool is_valid_int(TextBox textBox)
+        {
+
+            bool ok = false;
+            for (int i = 0; i < textBox.Text.Length; i++)
+
+                if (textBox.Text[i] >= '0' && textBox.Text[i] <= '9')
+
+                    ok = true;
+
+            return ok;
+        }
+
         private void buttonOk_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                CuttingType pr = new()
+                bool a,b,c,d;
+                a = is_valid_int(textBoxWeight);
+                b= is_valid_int(textBoxPrice);
+                c= is_valid_int(textBoxHardness);
+                d= is_valid_int(textBoxClarity);
+                if (a == true && b ==true && c==true && d==true)
                 {
-                    Name = textBoxName.Text,
-                    Color = textBoxColor.Text,
-                    Hardness = int.Parse(textBoxHardness.Text),
-                    Weight = int.Parse(textBoxWeight.Text),
-                    Price = int.Parse(textBoxPrice.Text),
-                    Clarity = int.Parse(textBoxClarity.Text),
-                    CutShape = textBoxCutShape.Text
-                };
-                Necklace necklace = new();
-                necklace.AddGemStonePr(pr);
+                    CuttingType pr = new()
+                    {
+                        Name = textBoxName.Text,
+                        Color = textBoxColor.Text,
+                        Hardness = int.Parse(textBoxHardness.Text),
+                        Weight = int.Parse(textBoxWeight.Text),
+                        Price = int.Parse(textBoxPrice.Text),
+                        Clarity = int.Parse(textBoxClarity.Text),
+                        CutShape = textBoxCutShape.Text
+                    };
+                    Necklace necklace = new();
+                    necklace.AddGemStonePr(pr);
+
+                    this.Close();
+
+                }
+                else if (a == false | b == false | c == false | d == false)
+                {
+                    Error error = new Error();
+                    error.ShowDialog();
+
+                }
+
                 
-                
-                this.Close();
             }
             if (comboBox1.SelectedIndex == 1)
             {
-                SemiPreciousGemstone semi = new()
+                bool a, b, c;
+                a = is_valid_int(textBoxWeight);
+                b = is_valid_int(textBoxPrice);
+                c = is_valid_int(textBoxHardness);
+                
+                if (a == true && b == true && c == true )
                 {
-                    Name = textBoxName.Text,
-                    Color = textBoxColor.Text,
-                    Hardness = int.Parse(textBoxHardness.Text),
-                    Weight = int.Parse(textBoxWeight.Text),
-                    Price = int.Parse(textBoxPrice.Text),
-                    Origin = textBoxOrigin.Text,
-                    Popularity = textBoxPopularity.Text
-                };
-                Necklace necklace = new();
-                necklace.AddGemStoneSe(semi);
+                    SemiPreciousGemstone semi = new()
+                    {
+                        Name = textBoxName.Text,
+                        Color = textBoxColor.Text,
+                        Hardness = int.Parse(textBoxHardness.Text),
+                        Weight = int.Parse(textBoxWeight.Text),
+                        Price = int.Parse(textBoxPrice.Text),
+                        Origin = textBoxOrigin.Text,
+                        Popularity = textBoxPopularity.Text
+                    };
+                    Necklace necklace = new();
+                    necklace.AddGemStoneSe(semi);
 
-                this.Close();
+                    this.Close();
+                }
+                else if (a == false | b == false | c == false)
+                {
+                    Error error = new Error();
+                    error.ShowDialog();
+                }
             }
         }
     }

@@ -54,3 +54,4 @@ C:\Users\valer\source\repos\DesktopGemStones\obj\Debug\net6.0-windows\refint\Des
 C:\Users\valer\source\repos\DesktopGemStones\obj\Debug\net6.0-windows\DesktopGemStones.pdb
 C:\Users\valer\source\repos\DesktopGemStones\obj\Debug\net6.0-windows\DesktopGemStones.genruntimeconfig.cache
 C:\Users\valer\source\repos\DesktopGemStones\obj\Debug\net6.0-windows\ref\DesktopGemStones.dll
+C:\Users\valer\source\repos\DesktopGemStones\obj\Debug\net6.0-windows\DesktopGemStones.Error.resources

@@ -77,6 +77,7 @@ namespace WinFormsApp1
             }
             
         }
+
         public static class StaticData
         {
             //Буфер данных
