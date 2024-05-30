@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "GemStonesConsole/1.0.0": {
+        "dependencies": {
+          "LibraryGemStones": "1.0.0"
+        },
+        "runtime": {
+          "GemStonesConsole.dll": {}
+        }
+      },
+      "LibraryGemStones/1.0.0": {
+        "runtime": {
+          "ClassLibrary2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GemStonesConsole/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibraryGemStones/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
